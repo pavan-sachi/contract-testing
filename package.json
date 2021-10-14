@@ -1,0 +1,22 @@
+{
+  "name": "contract-testing-nodejs-pact",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@pact-foundation/pact": "^9.13.0",
+    "jest": "^27.1.1"
+  },
+  "scripts": {
+    "test:consumer": "npm run test:midas && npm run test:dreamliner && npm run pact:publish:dreamliner && npm run pact:publish:midas",
+    "test:midas": "(cd consumers/midas && npm run test)",
+    "test:dreamliner": "(cd consumers/dreamliner && npm run test)",
+    "test:provider": "node verify-provider.js",
+    "pact:publish:dreamliner": "node publish-pacts.js dreamliner 1.0.0",
+    "pact:publish:midas": "node publish-pacts.js midas 1.0.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "uuid": "^3.4.0"
+  }
+}

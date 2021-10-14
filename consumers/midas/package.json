@@ -1,0 +1,17 @@
+{
+  "name": "midas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@pact-foundation/pact": "^9.13.0",
+    "jest": "^27.1.1"
+  },
+  "scripts": {
+    "test": "jest consumer.spec.js",
+    "pact:publish": "node publish-pacts.js"
+  },
+  "dependencies": {
+    "faker": "^5.5.3",
+    "uuid": "^3.4.0"
+  }
+}
